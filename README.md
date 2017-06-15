@@ -1,19 +1,9 @@
-# thinkphp-bjyblog
+# thinkphp-wform
 
-## 链接
-- 博客：http://baijunyao.com   
-- github：https://github.com/baijunyao/thinkphp-bjyblog   
-- oschina：http://git.oschina.net/shuaibai123/thinkbjy   
-
-## 使用说明
-[开源项目系列之thinkphp-bjyblog博客](http://baijunyao.com/article/104)  
-
+## 链接 
+- github：https://github.com/repair77/wform   
+  
 ## 简介
-闲暇之时使用thinkphp开发了一个个人博客用来整理技能知识；  
-
-如今博客的功能基本已经齐备；特开源以供各类猿们免费使用;  
-
-亦可以作为初学thinkphp的同学们的参考源代码；  
 
 此博客程序前后台页面以及逻辑代码的都由我手工打造；没有版权限制；可以随意折腾；
 
