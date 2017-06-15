@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <title>欢迎页面</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" type="text/css" href="/wform/Public/static/bootstrap-3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/wform/Public/static/bootstrap-3.3.5/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" type="text/css" href="/wform/Public/static/font-awesome-4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/wform/Public/static/css/bjy.css">
-    <link rel="stylesheet" type="text/css" href="/wform/Template/default_src/Home/Public/css/index.css">
-    <link rel="stylesheet" type="text/css" href="/wform/Template/default_src/Admin/Public/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="/Public/static/font-awesome-4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/Public/static/css/bjy.css">
+    <link rel="stylesheet" type="text/css" href="/Template/default_src/Home/Public/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/Template/default_src/Admin/Public/css/index.css" />
 </head>
 <body>
 <div id="welcome">
     <div class="block">
-        <h3 class="title">文章统计</h3>
+        <h3 class="title">表单统计</h3>
         <ul class="content">
-            <li>文章总数：<?php echo ($all_article); ?></li>
-            <li>已删文章数：<?php echo ($delete_article); ?></li>
-            <li>不显示的文章数：<?php echo ($hide_article); ?></li>
+            <li>表单总数：<?php echo ($all_article); ?></li>
+            <li>已删表单数：<?php echo ($delete_article); ?></li>
+            <li>不显示的表单数：<?php echo ($hide_article); ?></li>
         </ul>
     </div>
     <div class="block">
@@ -47,23 +47,23 @@
                 <td><?php echo PHP_OS;?></td>
             </tr>
             <tr>
-                <th>bjyblog版本：</th>
+                <th width="100px">表单系统版本：</th>
                 <td><?php echo (C("THINK_INFORMATION")); ?></td>
             </tr>
         </table>
     </div>
 </div>
-<script src="/wform/Public/static/js/jquery-2.0.0.min.js"></script>
+<script src="/Public/static/js/jquery-2.0.0.min.js"></script>
 <script>
     logoutUrl="<?php echo U('Home/User/logout');?>";
 </script>
-<script src="/wform/Public/static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="/Public/static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <!--[if lt IE 9]>
-<script src="/wform/Public/static/js/html5shiv.min.js"></script>
-<script src="/wform/Public/static/js/respond.min.js"></script>
+<script src="/Public/static/js/html5shiv.min.js"></script>
+<script src="/Public/static/js/respond.min.js"></script>
 <![endif]-->
-<script src="/wform/Public/static/pace/pace.min.js"></script>
-<script src="/wform/Template/default_src/Home/Public/js/index.js"></script>
+<script src="/Public/static/pace/pace.min.js"></script>
+<script src="/Template/default_src/Home/Public/js/index.js"></script>
 <!-- 百度页面自动提交开始 -->
 <script>
 (function(){

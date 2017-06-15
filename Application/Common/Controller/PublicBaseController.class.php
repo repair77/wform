@@ -14,7 +14,6 @@ class PublicBaseController extends BaseController{
         $assign=array(
             'categorys'=>D('Category')->getAllData(),
             'tags'=>D('Tag')->getAllData(),
-            'links'=>D('Link')->getDataByState(0,1),
             );
         $this->assign($assign);
 

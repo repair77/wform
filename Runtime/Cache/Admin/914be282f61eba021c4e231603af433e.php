@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <title>全部用户</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" type="text/css" href="/bjyblog/Public/static/bootstrap-3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/bjyblog/Public/static/bootstrap-3.3.5/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" type="text/css" href="/bjyblog/Public/static/font-awesome-4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/bjyblog/Public/static/css/bjy.css">
-    <link rel="stylesheet" type="text/css" href="/bjyblog/Template/default_src/Home/Public/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="/Public/static/font-awesome-4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/Public/static/css/bjy.css">
+    <link rel="stylesheet" type="text/css" href="/Template/default_src/Home/Public/css/index.css">
 </head>
 <body>
 <table class="table table-bordered table-striped table-hover table-condensed">
@@ -42,17 +42,17 @@
 <div style="text-align: center;">
     <?php echo ($page); ?>
 </div>
-<script src="/bjyblog/Public/static/js/jquery-2.0.0.min.js"></script>
+<script src="/Public/static/js/jquery-2.0.0.min.js"></script>
 <script>
     logoutUrl="<?php echo U('Home/User/logout');?>";
 </script>
-<script src="/bjyblog/Public/static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="/Public/static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <!--[if lt IE 9]>
-<script src="/bjyblog/Public/static/js/html5shiv.min.js"></script>
-<script src="/bjyblog/Public/static/js/respond.min.js"></script>
+<script src="/Public/static/js/html5shiv.min.js"></script>
+<script src="/Public/static/js/respond.min.js"></script>
 <![endif]-->
-<script src="/bjyblog/Public/static/pace/pace.min.js"></script>
-<script src="/bjyblog/Template/default_src/Home/Public/js/index.js"></script>
+<script src="/Public/static/pace/pace.min.js"></script>
+<script src="/Template/default_src/Home/Public/js/index.js"></script>
 <!-- 百度页面自动提交开始 -->
 <script>
 (function(){

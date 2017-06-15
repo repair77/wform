@@ -35,7 +35,6 @@ class HomeBaseController extends BaseController{
         $assign=array(
             'categorys'=>D('Category')->getAllData(),
             'tags'=>D('Tag')->getAllData(),
-            'links'=>D('Link')->getDataByState(0,1),
             'recommend'=>$recommend,
             'new_comment'=>$new_comment,
             'show_link'=>$show_link

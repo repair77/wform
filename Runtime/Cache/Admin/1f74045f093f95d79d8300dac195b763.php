@@ -2,14 +2,14 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>添加文章</title>
+    <title>添加表单</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" type="text/css" href="/wform/Public/static/bootstrap-3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/wform/Public/static/bootstrap-3.3.5/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" type="text/css" href="/wform/Public/static/font-awesome-4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/wform/Public/static/css/bjy.css">
-    <link rel="stylesheet" type="text/css" href="/wform/Template/default_src/Home/Public/css/index.css">
-        <link rel="stylesheet" href="/wform/Public/static/iCheck-1.0.2/skins/all.css">
+    <link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="/Public/static/font-awesome-4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/Public/static/css/bjy.css">
+    <link rel="stylesheet" type="text/css" href="/Template/default_src/Home/Public/css/index.css">
+        <link rel="stylesheet" href="/Public/static/iCheck-1.0.2/skins/all.css">
 </head>
 <body>
 <form class="form-group" action="<?php echo U('Admin/Article/add');?>" method="post">
@@ -51,15 +51,15 @@
         <tr>
             <th>描述</th>
             <td>
-                <textarea class="form-control modal-sm" name="description" rows="7" placeholder="可以不填，如不填；则截取文章内容前300字为描述"></textarea>
+                <textarea class="form-control modal-sm" name="description" rows="7" placeholder="可以不填，如不填；则截取表单内容前300字为描述"></textarea>
             </td>
         </tr>
         <tr>
             <th>内容</th>
             <td>
                 <script id="container" name="content" type="text/plain"></script>
-<script src="/wform/Public/static/ueditor1_4_3/ueditor.config.js"></script>
-<script src="/wform/Public/static/ueditor1_4_3/ueditor.all.js"></script>
+<script src="/Public/static/ueditor1_4_3/ueditor.config.js"></script>
+<script src="/Public/static/ueditor1_4_3/ueditor.all.js"></script>
 <script>
     var ue = UE.getEditor('container');
 </script>
@@ -103,17 +103,17 @@
         </tr>
     </table>
 </form>
-<script src="/wform/Public/static/js/jquery-2.0.0.min.js"></script>
+<script src="/Public/static/js/jquery-2.0.0.min.js"></script>
 <script>
     logoutUrl="<?php echo U('Home/User/logout');?>";
 </script>
-<script src="/wform/Public/static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="/Public/static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <!--[if lt IE 9]>
-<script src="/wform/Public/static/js/html5shiv.min.js"></script>
-<script src="/wform/Public/static/js/respond.min.js"></script>
+<script src="/Public/static/js/html5shiv.min.js"></script>
+<script src="/Public/static/js/respond.min.js"></script>
 <![endif]-->
-<script src="/wform/Public/static/pace/pace.min.js"></script>
-<script src="/wform/Template/default_src/Home/Public/js/index.js"></script>
+<script src="/Public/static/pace/pace.min.js"></script>
+<script src="/Template/default_src/Home/Public/js/index.js"></script>
 <!-- 百度页面自动提交开始 -->
 <script>
 (function(){
@@ -134,7 +134,7 @@
 <!-- 百度统计开始 -->
 
 <!-- 百度统计结束 -->
-<script src="/wform/Public/static/iCheck-1.0.2/icheck.min.js"></script>
+<script src="/Public/static/iCheck-1.0.2/icheck.min.js"></script>
 <script>
 $(document).ready(function(){
     $('.icheck').iCheck({

@@ -1,37 +1,12 @@
-# thinkphp-bjyblog
-
-## 链接
-- 博客：http://baijunyao.com   
-- github：https://github.com/baijunyao/thinkphp-bjyblog   
-- oschina：http://git.oschina.net/shuaibai123/thinkbjy   
-
-## 使用说明
-[开源项目系列之thinkphp-bjyblog博客](http://baijunyao.com/article/104)  
-
-## 简介
-闲暇之时使用thinkphp开发了一个个人博客用来整理技能知识；  
-
-如今博客的功能基本已经齐备；特开源以供各类猿们免费使用;  
-
-亦可以作为初学thinkphp的同学们的参考源代码；  
-
-此博客程序前后台页面以及逻辑代码的都由我手工打造；没有版权限制；可以随意折腾；
-
-想研究支付宝、微信支付、邮件发送、短信通知验证码发送、oss云存储、融云即时通讯、友盟推送、Memcached缓存、权限管理、等更多功能的可以参考进阶版的bjyadmin https://github.com/baijunyao/thinkphp-bjyadmin  
-
-下图即是使用bjyblog开发的个人博客[白俊遥博客](http://statics.baijunyao.com/images/other/thinkbjy.jpg) http://baijunyao.com  
-
-![Thinkbjy](http://statics.baijunyao.com/images/other/thinkbjy.jpg)  
-
 ## 使用说明
 1. 请将项目内的所有文件直接放在根目录下；不要多层目录；  
-例如正确：www/;错误：www/thinkbjy/；
+例如正确：www/;错误：www/xxx/；
 2. 后台登录密码默认为admin；
 3. 如果确认开启了mod_rewrite  
 请将/Application/Common/Conf/config.php中的URL_MODEL改为2以优化url  
-未开启路由：http://baijunyao.com/index.php/Home/Index/article/aid/60  
-开启路由后：http://baijunyao.com/article/60
-4. 把根目录下的robots.txt中的baijunyao.com改为自己的域名；
+未开启路由：http://xxx.com/index.php/Home/Index/article/aid/60  
+开启路由后：http://xxx.com/article/60
+4. 把根目录下的robots.txt中的xxx.com改为自己的域名；
 5. 可以在用户管理中；将第三方账号标记为站长；然后后台就必须使用第三方账号登录以增强安全性；
 
 ## 针对thinkphp的改进优化；

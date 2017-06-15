@@ -2,14 +2,14 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>bjyblog后台管理</title>
+    <title>表单系统后台管理</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" type="text/css" href="/wform/Public/static/bootstrap-3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/wform/Public/static/bootstrap-3.3.5/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" type="text/css" href="/wform/Public/static/font-awesome-4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/wform/Public/static/css/bjy.css">
-    <link rel="stylesheet" type="text/css" href="/wform/Template/default_src/Home/Public/css/index.css">
-    <link rel="stylesheet" type="text/css" href="/wform/Template/default_src/Admin/Public/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="/Public/static/font-awesome-4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/Public/static/css/bjy.css">
+    <link rel="stylesheet" type="text/css" href="/Template/default_src/Home/Public/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/Template/default_src/Admin/Public/css/index.css" />
 </head>
 <body>
 <!-- 顶部导航菜单开始 -->
@@ -25,7 +25,11 @@
         </li>
         <li class="ntn-li">
             <span class="fa fa-comments nt-ico"></span>
-            碎言评论
+            评论管理
+        </li>
+        <li class="ntn-li">
+            <span class="fa fa-trash nt-ico"></span>
+            回收管理
         </li>
         <li class="ntn-li">
             <span class="fa fa-users nt-ico"></span>
@@ -34,10 +38,6 @@
         <li class="ntn-li">
             <span class="fa fa-cogs nt-ico"></span>
             网站设置
-        </li>
-        <li class="ntn-li">
-            <span class="fa fa-trash nt-ico"></span>
-            回收管理
         </li>
     </ul>
     <ul class="nt-msg list-unstyled">
@@ -57,18 +57,18 @@
     <div class="nl-con nl-show">
         <dl>
             <dt>
-                <span class="fa fa-th"></span>文章管理
+                <span class="fa fa-th"></span>表单管理
             </dt>
             <dd>
                 <a href="<?php echo U('Admin/Article/add');?>" target="right_content"></a>
-                <span class="fa fa-caret-right"></span>添加文章
+                <span class="fa fa-caret-right"></span>添加表单
                 <div class="nl-checked">
                     <div class="nl-arrows"></div>
                 </div>
             </dd>
             <dd>
                 <a href="<?php echo U('Admin/Article/index');?>" target="right_content"></a>
-                <span class="fa fa-caret-right"></span>文章列表
+                <span class="fa fa-caret-right"></span>表单列表
                 <div class="nl-checked">
                     <div class="nl-arrows"></div>
                 </div>
@@ -76,7 +76,27 @@
         </dl>
         <dl>
             <dt>
-                <span class="fa fa-tags"></span>标签管理
+                <span class="fa fa-tags"></span>单元表单管理
+            </dt>
+            <dd>
+                <a href="<?php echo U('Admin/Tag/add');?>" target="right_content"></a>
+                <span class="fa fa-caret-right"></span>添加单元表单
+                <div class="nl-checked">
+                    <div class="nl-arrows"></div>
+                </div>
+            </dd>
+            <dd>
+                <a href="<?php echo U('Admin/Tag/index');?>" target="right_content"></a>
+                <span class="fa fa-caret-right"></span>单元表单列表
+                <div class="nl-checked">
+                    <div class="nl-arrows"></div>
+                </div>
+            </dd>
+        </dl>
+        <!-- 略去标签管理
+        <dl>
+            <dt>
+                <span class="fa fa-tags"></span>标签管理(表单打标签)
             </dt>
             <dd>
                 <a href="<?php echo U('Admin/Tag/add');?>" target="right_content"></a>
@@ -92,7 +112,8 @@
                     <div class="nl-arrows"></div>
                 </div>
             </dd>
-        </dl>
+        </dl> 
+        -->
         <dl>
             <dt>
                 <span class="fa fa-columns"></span>分类管理
@@ -129,6 +150,7 @@
                 </div>
             </dd>
         </dl>
+        <!-- 略去随言碎语 
         <dl>
             <dt>
                 <span class="fa fa-list-alt"></span>随言碎语
@@ -148,6 +170,7 @@
                 </div>
             </dd>
         </dl>
+         -->        
     </div>
     <!-- 留言评论结束 -->
 
@@ -159,7 +182,7 @@
             </dt>
             <dd>
                 <a href="<?php echo U('Admin/Recycle/article');?>" target="right_content"></a>
-                <span class="fa fa-caret-right"></span>已删文章
+                <span class="fa fa-caret-right"></span>已删表单
                 <div class="nl-checked">
                     <div class="nl-arrows"></div>
                 </div>
@@ -174,13 +197,6 @@
             <dd>
                 <a href="<?php echo U('Admin/Recycle/chat');?>" target="right_content"></a>
                 <span class="fa fa-caret-right"></span>已删随言
-                <div class="nl-checked">
-                    <div class="nl-arrows"></div>
-                </div>
-            </dd>
-            <dd>
-                <a href="<?php echo U('Admin/Recycle/link');?>" target="right_content"></a>
-                <span class="fa fa-caret-right"></span>已删友链
                 <div class="nl-checked">
                     <div class="nl-arrows"></div>
                 </div>
@@ -227,25 +243,6 @@
                 </div>
             </dd>
         </dl>
-        <dl>
-            <dt>
-                <span class="fa fa-heart"></span>友情链接
-            </dt>
-            <dd>
-                <a href="<?php echo U('Admin/Link/add');?>" target="right_content"></a>
-                <span class="fa fa-caret-right"></span>添加友链
-                <div class="nl-checked">
-                    <div class="nl-arrows"></div>
-                </div>
-            </dd>
-            <dd>
-                <a href="<?php echo U('Admin/Link/index');?>" target="right_content"></a>
-                <span class="fa fa-caret-right"></span>友链列表
-                <div class="nl-checked">
-                    <div class="nl-arrows"></div>
-                </div>
-            </dd>
-        </dl>
     </div>
     <!-- 网站设置结束 -->
 </div>
@@ -256,17 +253,17 @@
     <iframe id="content-iframe" src="<?php echo U('Admin/Index/welcome');?>" frameborder="0" width="100%" height="100%" name="right_content" scrolling="auto" frameborder="0" scrolling="no"></iframe>
 </div>
 <!-- 右侧内容结束 -->
-<script src="/wform/Public/static/js/jquery-2.0.0.min.js"></script>
+<script src="/Public/static/js/jquery-2.0.0.min.js"></script>
 <script>
     logoutUrl="<?php echo U('Home/User/logout');?>";
 </script>
-<script src="/wform/Public/static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="/Public/static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <!--[if lt IE 9]>
-<script src="/wform/Public/static/js/html5shiv.min.js"></script>
-<script src="/wform/Public/static/js/respond.min.js"></script>
+<script src="/Public/static/js/html5shiv.min.js"></script>
+<script src="/Public/static/js/respond.min.js"></script>
 <![endif]-->
-<script src="/wform/Public/static/pace/pace.min.js"></script>
-<script src="/wform/Template/default_src/Home/Public/js/index.js"></script>
+<script src="/Public/static/pace/pace.min.js"></script>
+<script src="/Template/default_src/Home/Public/js/index.js"></script>
 <!-- 百度页面自动提交开始 -->
 <script>
 (function(){
@@ -287,7 +284,7 @@
 <!-- 百度统计开始 -->
 
 <!-- 百度统计结束 -->
-<script type="text/javascript" src="/wform/Template/default_src/Admin/Public/js/index.js"></script>
+<script type="text/javascript" src="/Template/default_src/Admin/Public/js/index.js"></script>
 <script>
 // 动态调整iframe的高度以适应不同高度的显示器
 $('#content').height($(window).height());

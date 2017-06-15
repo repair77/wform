@@ -4,12 +4,12 @@
 	<meta charset="UTF-8">
 	<title>登录后台管理系统</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" type="text/css" href="/wform/Public/static/bootstrap-3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/wform/Public/static/bootstrap-3.3.5/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" type="text/css" href="/wform/Public/static/font-awesome-4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/wform/Public/static/css/bjy.css">
-    <link rel="stylesheet" type="text/css" href="/wform/Template/default_src/Home/Public/css/index.css">
-	<link rel="stylesheet" type="text/css" href="/wform/Template/default_src/Admin/Public/css/login.css" />
+    <link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="/Public/static/font-awesome-4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/Public/static/css/bjy.css">
+    <link rel="stylesheet" type="text/css" href="/Template/default_src/Home/Public/css/index.css">
+	<link rel="stylesheet" type="text/css" href="/Template/default_src/Admin/Public/css/login.css" />
 </head>
 <body>
 <form class="form-group" action="<?php echo U('Admin/Login/login');?>" method="post">
@@ -20,17 +20,17 @@
 		<input class="btn btn-primary submit" type="submit" value="登录">
 	</div>
 </form>
-<script src="/wform/Public/static/js/jquery-2.0.0.min.js"></script>
+<script src="/Public/static/js/jquery-2.0.0.min.js"></script>
 <script>
     logoutUrl="<?php echo U('Home/User/logout');?>";
 </script>
-<script src="/wform/Public/static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="/Public/static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <!--[if lt IE 9]>
-<script src="/wform/Public/static/js/html5shiv.min.js"></script>
-<script src="/wform/Public/static/js/respond.min.js"></script>
+<script src="/Public/static/js/html5shiv.min.js"></script>
+<script src="/Public/static/js/respond.min.js"></script>
 <![endif]-->
-<script src="/wform/Public/static/pace/pace.min.js"></script>
-<script src="/wform/Template/default_src/Home/Public/js/index.js"></script>
+<script src="/Public/static/pace/pace.min.js"></script>
+<script src="/Template/default_src/Home/Public/js/index.js"></script>
 <!-- 百度页面自动提交开始 -->
 <script>
 (function(){

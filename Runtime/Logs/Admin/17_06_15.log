@@ -4196,3 +4196,27 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000480s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000560s ]
 
+[ 2017-06-15T21:51:04+08:00 ] ::1 /index.php/Admin/wform/Template/default_src/Home/Public/css/index.css
+ERR: 无法加载控制器:Wform
+
+[ 2017-06-15T21:51:04+08:00 ] ::1 /index.php/Admin/wform/Template/default_src/Home/Public/js/index.js
+ERR: 无法加载控制器:Wform
+
+[ 2017-06-15T21:51:05+08:00 ] ::1 /index.php/Admin/wform/Template/default_src/Home/Public/css/index.css
+ERR: 无法加载控制器:Wform
+
+[ 2017-06-15T21:51:05+08:00 ] ::1 /index.php/Admin/wform/Template/default_src/Home/Public/js/index.js
+ERR: 无法加载控制器:Wform
+
+[ 2017-06-15T22:29:00+08:00 ] 127.0.0.1 /index.php/Admin/Link/add
+ERR: 无法加载控制器:Link
+
+[ 2017-06-15T22:29:01+08:00 ] 127.0.0.1 /index.php/Admin/Link/index
+ERR: 无法加载控制器:Link
+
+[ 2017-06-15T22:29:02+08:00 ] 127.0.0.1 /index.php/Admin/Link/add
+ERR: 无法加载控制器:Link
+
+[ 2017-06-15T22:31:29+08:00 ] 127.0.0.1 /index.php/Admin/Recycle/link
+ERR: Think\Model:getDataByState方法不存在！
+

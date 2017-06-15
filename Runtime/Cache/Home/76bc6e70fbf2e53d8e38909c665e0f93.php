@@ -10,12 +10,12 @@
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <meta name="author" content="baijunyao,<?php echo (C("ADMIN_EMAIL")); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" type="text/css" href="/wform/Public/static/bootstrap-3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/wform/Public/static/bootstrap-3.3.5/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" type="text/css" href="/wform/Public/static/font-awesome-4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/wform/Public/static/css/bjy.css">
-    <link rel="stylesheet" type="text/css" href="/wform/Template/default_src/Home/Public/css/index.css">
-    <link rel="stylesheet" type="text/css" href="/wform/Public/static/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="/Public/static/font-awesome-4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/Public/static/css/bjy.css">
+    <link rel="stylesheet" type="text/css" href="/Template/default_src/Home/Public/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/Public/static/css/animate.css">
 <!-- head头部分结束 -->
 </head>
 <!-- head头部分结束 -->
@@ -162,7 +162,7 @@
         <h4 class="b-title">最新评论</h4>
         <div>
             <?php if(is_array($new_comment)): foreach($new_comment as $key=>$v): ?><ul class="b-new-comment <?php if(($key) == "0"): ?>b-new-commit-first<?php endif; ?>">
-                    <img class="b-head-img js-head-img" src="/wform/Template/default_src/Home/Public/image/qq_default.jpg" _src="<?php echo ($v['head_img']); ?>" alt="<?php echo ($v['nickname']); ?>">
+                    <img class="b-head-img js-head-img" src="/Template/default_src/Home/Public/image/qq_default.jpg" _src="<?php echo ($v['head_img']); ?>" alt="<?php echo ($v['nickname']); ?>">
                     <li class="b-nickname">
                         <?php echo ($v['nickname']); ?><span><?php echo ($v['date']); ?></span>
                     </li>
@@ -198,7 +198,7 @@
 <footer id="b-foot" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <ul>
         <li class="text-center">
-            本站使用自主开发的<a rel="nofollow" href="http://git.oschina.net/shuaibai123/thinkbjy" target="_blank">bjyblog v<?php echo (C("THINK_INFORMATION")); ?></a>开源博客程序搭建  © 2014-2017 baijunyao.com 版权所有 ICP证：豫ICP备14009546号-3
+            <a rel="nofollow" href="#" target="_blank"> v<?php echo (C("THINK_INFORMATION")); ?></a>开源博客程序搭建  © 2014-2017  版权所有 ICP证：
         </li>
         <li class="text-center">
             联系邮箱：<?php echo (C("ADMIN_EMAIL")); ?>
@@ -228,19 +228,19 @@
             <div class="col-xs-12 col-md-12 col-lg-12 b-login-row">
                 <ul class="row">
                     <li class="col-xs-6 col-md-4 col-lg-4 b-login-img">
-                        <a href="<?php echo U('Home/User/oauth_login',array('type'=>'qq'));?>"><img src="/wform/Template/default_src/Home/Public/image/qq-login.png" alt="QQ登录" title="QQ登录"></a>
+                        <a href="<?php echo U('Home/User/oauth_login',array('type'=>'qq'));?>"><img src="/Template/default_src/Home/Public/image/qq-login.png" alt="QQ登录" title="QQ登录"></a>
                     </li>
                     <li class="col-xs-6 col-md-4 col-lg-4 b-login-img">
-                        <a href="<?php echo U('Home/User/oauth_login',array('type'=>'sina'));?>"><img src="/wform/Template/default_src/Home/Public/image/sina-login.png" alt="微博登录" title="微博登录"></a>
+                        <a href="<?php echo U('Home/User/oauth_login',array('type'=>'sina'));?>"><img src="/Template/default_src/Home/Public/image/sina-login.png" alt="微博登录" title="微博登录"></a>
                     </li>
                     <li class="col-xs-6 col-md-4 col-lg-4 b-login-img">
-                        <a href="<?php echo U('Home/User/oauth_login',array('type'=>'douban'));?>"><img src="/wform/Template/default_src/Home/Public/image/douban-login.png" alt="豆瓣登录" title="豆瓣登录"></a>
+                        <a href="<?php echo U('Home/User/oauth_login',array('type'=>'douban'));?>"><img src="/Template/default_src/Home/Public/image/douban-login.png" alt="豆瓣登录" title="豆瓣登录"></a>
                     </li>
                     <li class="col-xs-6 col-md-4 col-lg-4 b-login-img">
-                        <a href="<?php echo U('Home/User/oauth_login',array('type'=>'renren'));?>"><img src="/wform/Template/default_src/Home/Public/image/renren-login.png" alt="人人登录" title="人人登录"></a>
+                        <a href="<?php echo U('Home/User/oauth_login',array('type'=>'renren'));?>"><img src="/Template/default_src/Home/Public/image/renren-login.png" alt="人人登录" title="人人登录"></a>
                     </li>
                     <li class="col-xs-6 col-md-4 col-lg-4 b-login-img">
-                        <a href="<?php echo U('Home/User/oauth_login',array('type'=>'kaixin'));?>"><img src="/wform/Template/default_src/Home/Public/image/kaixin-login.png" alt="开心网登录" title="开心网登录"></a>
+                        <a href="<?php echo U('Home/User/oauth_login',array('type'=>'kaixin'));?>"><img src="/Template/default_src/Home/Public/image/kaixin-login.png" alt="开心网登录" title="开心网登录"></a>
                     </li>
                     <li class="col-xs-6 col-md-4 col-lg-4 b-login-img">
                         <a href="<?php echo U('Home/User/oauth_login',array('type'=>''));?>"><img src="" alt="待定" title="待定"></a>
@@ -253,17 +253,17 @@
 <!-- 登录模态框结束 -->
 
 <!-- 引入bootstrjs部分开始 -->
-<script src="/wform/Public/static/js/jquery-2.0.0.min.js"></script>
+<script src="/Public/static/js/jquery-2.0.0.min.js"></script>
 <script>
     logoutUrl="<?php echo U('Home/User/logout');?>";
 </script>
-<script src="/wform/Public/static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="/Public/static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <!--[if lt IE 9]>
-<script src="/wform/Public/static/js/html5shiv.min.js"></script>
-<script src="/wform/Public/static/js/respond.min.js"></script>
+<script src="/Public/static/js/html5shiv.min.js"></script>
+<script src="/Public/static/js/respond.min.js"></script>
 <![endif]-->
-<script src="/wform/Public/static/pace/pace.min.js"></script>
-<script src="/wform/Template/default_src/Home/Public/js/index.js"></script>
+<script src="/Public/static/pace/pace.min.js"></script>
+<script src="/Template/default_src/Home/Public/js/index.js"></script>
 <!-- 百度页面自动提交开始 -->
 <script>
 (function(){

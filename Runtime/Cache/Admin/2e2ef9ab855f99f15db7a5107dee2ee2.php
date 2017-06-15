@@ -4,12 +4,12 @@
 	<meta charset="UTF-8">
 	<title>网站信息</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" type="text/css" href="/wform/Public/static/bootstrap-3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/wform/Public/static/bootstrap-3.3.5/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" type="text/css" href="/wform/Public/static/font-awesome-4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/wform/Public/static/css/bjy.css">
-    <link rel="stylesheet" type="text/css" href="/wform/Template/default_src/Home/Public/css/index.css">
-	    <link rel="stylesheet" href="/wform/Public/static/iCheck-1.0.2/skins/all.css">
+    <link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="/Public/static/font-awesome-4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/Public/static/css/bjy.css">
+    <link rel="stylesheet" type="text/css" href="/Template/default_src/Home/Public/css/index.css">
+	    <link rel="stylesheet" href="/Public/static/iCheck-1.0.2/skins/all.css">
 </head>
 <body>
 <form action="<?php echo U('Admin/Config/index');?>" method="post">
@@ -21,7 +21,7 @@
 			<a href="#seo" data-toggle="tab">优化推广</a>
 		</li>
 		<li>
-			<a href="#water" data-toggle="tab">文章水印</a>
+			<a href="#water" data-toggle="tab">表单水印</a>
 		</li>
 		<li>
 			<a href="#oauth" data-toggle="tab">第三方登录</a>
@@ -95,13 +95,13 @@
 					</td>
 				</tr>
 				<tr>
-					<th>文章保留版权提示：</th>
+					<th>表单保留版权提示：</th>
 					<td>
 						<textarea class="form-control modal-sm" name="COPYRIGHT_WORD" rows="5" placeholder=""><?php echo ($data['COPYRIGHT_WORD']); ?></textarea>
 					</td>
 				</tr>
 				<tr>
-					<th>文章图片title和alt内容：</th>
+					<th>表单图片title和alt内容：</th>
 					<td>
 						<input class="form-control modal-sm" type="text" name="IMAGE_TITLE_ALT_WORD" value="<?php echo ($data['IMAGE_TITLE_ALT_WORD']); ?>" >
 					</td>
@@ -380,17 +380,17 @@
 		<input class="btn btn-success" type="submit" value="提交">
 	</div>
 </form>
-<script src="/wform/Public/static/js/jquery-2.0.0.min.js"></script>
+<script src="/Public/static/js/jquery-2.0.0.min.js"></script>
 <script>
     logoutUrl="<?php echo U('Home/User/logout');?>";
 </script>
-<script src="/wform/Public/static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="/Public/static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <!--[if lt IE 9]>
-<script src="/wform/Public/static/js/html5shiv.min.js"></script>
-<script src="/wform/Public/static/js/respond.min.js"></script>
+<script src="/Public/static/js/html5shiv.min.js"></script>
+<script src="/Public/static/js/respond.min.js"></script>
 <![endif]-->
-<script src="/wform/Public/static/pace/pace.min.js"></script>
-<script src="/wform/Template/default_src/Home/Public/js/index.js"></script>
+<script src="/Public/static/pace/pace.min.js"></script>
+<script src="/Template/default_src/Home/Public/js/index.js"></script>
 <!-- 百度页面自动提交开始 -->
 <script>
 (function(){
@@ -411,7 +411,7 @@
 <!-- 百度统计开始 -->
 
 <!-- 百度统计结束 -->
-<script src="/wform/Public/static/iCheck-1.0.2/icheck.min.js"></script>
+<script src="/Public/static/iCheck-1.0.2/icheck.min.js"></script>
 <script>
 $(document).ready(function(){
     $('.icheck').iCheck({
