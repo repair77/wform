@@ -15,9 +15,9 @@ class RecycleController extends AdminBaseController{
         $this->display();
     }
 
-    // 已删文章
-    public function article(){
-        $data=D('Article')->getPageData('all','all','all',1);
+    // 已删表单
+    public function content(){
+        $data=D('Content')->getPageData('all','all','all',1);
         $this->assign('data',$data['data']);
         $this->assign('page',$data['page']);
         // p($data);die;
@@ -31,22 +31,6 @@ class RecycleController extends AdminBaseController{
         $this->assign('page',$data['page']);
         // p($data);
         // die;
-        $this->display();
-    }
-
-    // 已删友情链接
-    public function link(){
-        $data=D('Link')->getDataByState(1);
-        $this->assign('data',$data);
-        // p($data);die;
-        $this->display();
-    }
-
-    // 已删随言碎语
-    public function chat(){
-        $data=D('Chat')->getDataByState(1);
-        $this->assign('data',$data);
-        // p($data);die;
         $this->display();
     }
 

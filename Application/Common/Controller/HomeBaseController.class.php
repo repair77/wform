@@ -21,24 +21,23 @@ class HomeBaseController extends BaseController{
             'is_delete'=>0,
             'is_top'=>1
             );
-        // 获取置顶推荐文章
+        // 获取置顶推荐
         $recommend=M('Article')
             ->field('aid,title')
             ->where($recommend_map)
             ->order('aid desc')
             ->select();
         // 获取最新评论
-        $new_comment=D('Comment')->getNewComment();
+        // $new_comment=D('Comment')->getNewComment();
         // 判断是否显示友情链接
-        $show_link=MODULE_NAME.'/'.CONTROLLER_NAME.'/'.ACTION_NAME=='Home/Index/index' ? 1 : 0;
+        // $show_link=MODULE_NAME.'/'.CONTROLLER_NAME.'/'.ACTION_NAME=='Home/Index/index' ? 1 : 0;
         // 分配常用数据
         $assign=array(
             'categorys'=>D('Category')->getAllData(),
             'tags'=>D('Tag')->getAllData(),
-            'links'=>D('Link')->getDataByState(0,1),
             'recommend'=>$recommend,
             'new_comment'=>$new_comment,
-            'show_link'=>$show_link
+            // 'show_link'=>$show_link
             );
         $this->assign($assign);
     }

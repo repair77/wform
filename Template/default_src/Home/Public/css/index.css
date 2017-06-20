@@ -278,7 +278,7 @@ a{
             color: red;
         }
     }
-    /* 文章列表开始 */
+    /* 表单列表开始 */
     .b-one-article{
         margin-bottom: 15px;
         padding-top: 20px;
@@ -364,9 +364,9 @@ a{
         }
 
     }
-    /* 文章列表结束 */
+    /* 表单列表结束 */
 
-    /* 文章内容开始 */
+    /* 表单内容开始 */
     .b-article{
         background: #fff;
         font-size: 16px;
@@ -414,9 +414,9 @@ a{
         }
 
     }
-    /* 文章内容结束 */
+    /* 表单内容结束 */
 
-    /* 文章评论开始 */
+    /* 表单评论开始 */
     .b-comment{
         margin-top: 10px;
         padding-bottom: 210px;
@@ -604,7 +604,7 @@ a{
             border-bottom: 1px solid #E6EAED;
         }
     }
-    /* 文章评论结束 */
+    /* 表单评论结束 */
 
     /* 随言碎语开始 */
     .b-chat{

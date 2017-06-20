@@ -15,7 +15,7 @@ $(function(){
         getWidthLeft($('.b-nav-active'),true);
     });
 
-    // 设置文章页iframe宽度
+    // 设置表单页iframe宽度
     $('.b-article iframe').width('95%');
     // 返回顶部
     $(window).scroll(function(e) {

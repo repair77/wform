@@ -53,7 +53,8 @@ class CategoryController extends AdminBaseController{
             if($this->db->editData()){
                 $this->success('修改成功');
             }else{
-                $this->error($this->db->getError());
+
+                $this->error('cuowu',$this->db->getError());
             }
         }else{
             $cid=I('get.cid',0,'intval');

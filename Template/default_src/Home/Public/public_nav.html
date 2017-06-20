@@ -1,4 +1,4 @@
-<!-- 顶部导航开始 -->
+顶部导航开始 -->
 <header id="b-public-nav" class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -14,7 +14,7 @@
                     <li class="b-lc-start">&lt;?php</li>
                     <li class="b-lc-echo">echo</li>
                 </ul>
-                <p class="b-logo-word">'白俊遥博客'</p>
+                <p class="b-logo-word">'博客'</p>
                 <p class="b-logo-end">;</p>
             </a>
         </div>
@@ -29,12 +29,14 @@
                         <a href="{:U('Home/Index/category',array('cid'=>$v['cid']))}" onclick="return recordId('cid',{$v['cid']})">{$v['cname']}</a>
                     </li>
                 </foreach>
+                <!-- 
                 <li class="b-nav-cname <eq name="cid" value="chat">b-nav-active</eq> ">
                     <a href="{:U('Home/Index/chat')}">随言碎语</a>
                 </li>
                 <li class="b-nav-cname hidden-sm  <eq name="cid" value="git">b-nav-active</eq> ">
                     <a href="{:U('Home/Index/git')}">开源项目</a>
                 </li>
+                -->
             </ul>
             <ul id="b-login-word" class="nav navbar-nav navbar-right">
                 <empty name="Think.session.user.head_img" >
@@ -53,4 +55,4 @@
         </div>
     </div>
 </header>
-<!-- 顶部导航结束 -->
+<!-- 顶部导航结束

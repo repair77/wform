@@ -26,8 +26,8 @@
             <td>字段类型</td>
             <td>{$v['tname']}</td>
             <td>
-                <a href="{:U('Admin/Tag/edit',array('tid'=>$v['tid']))}">修改</a> | 
-                <a href="javascript:if(confirm('确定要删除吗?')) location='{:U('Admin/Tag/delete',array('tid'=>$v['tid']))}'">删除</a>
+                <a href="{:U('Admin/Fields/edit',array('tid'=>$v['tid']))}">修改</a> | 
+                <a href="javascript:if(confirm('确定要删除吗?')) location='{:U('Admin/Fields/delete',array('tid'=>$v['tid']))}'">删除</a>
             </td>
         </tr>
     </foreach>

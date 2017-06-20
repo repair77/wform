@@ -6,11 +6,20 @@
     <bootstrapcss />
 </head>
 <body>
-<form action="{:U('Admin/Tag/add')}" method="post">
+<form action="{:U('Admin/Fields/add')}" method="post">
     <table class="table table-bordered table-striped table-hover table-condensed">
        <tr>
             <th>字段类型</th>
-            <td><input class="form-control modal-sm" type="text" name="cname" ></td>
+            <td>
+                <select class="form-control modal-sm" name="fieldstype">
+                    <option value="text">单行文本</option>
+                    <option value="textarea">多行文本</option>
+                    <option value="datetime">日期时间</option>
+                    <option value="radio">单选框</option>
+                    <option value="checkbox">多选框</option>
+                    <option value="image">图片</option>
+                </select>  
+            </td>
         </tr>
         <tr>
             <th>所属表单</th>
@@ -18,7 +27,7 @@
                 <select class="form-control modal-sm" name="pid">
                     <option value="0">所属表单</option>
                     <foreach name="data" key="k" item="v">
-                        <option value="{$v['cid']}" <if condition="$cid eq $v['cid']">selected="selected"</if> >{$v['_name']}</option>
+                        <option value="{$v['aid']}" <if condition="$cid eq $v['aid']">selected="selected"</if> >{$v['_name']}</option>
                     </foreach>
                 </select>
             </td>

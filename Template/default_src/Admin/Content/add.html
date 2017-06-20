@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>添加表单</title>
+    <bootstrapcss />
+    <icheckcss />
+</head>
+<body>
+<form class="form-group" action="{:U('Admin/Content/add')}" method="post">
+    <table class="table table-bordered table-striped table-hover table-condensed">
+        <tr>
+            <th width="80px">所属分类</th>
+            <td>
+                <select class="form-control modal-sm" name="cid">
+                    <foreach name="allCategory" item="v">
+                        <option value="{$v['cid']}">{$v['_name']}</option>
+                    </foreach>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>标题</th>
+            <td>
+                <input class="form-control modal-sm" type="text" name="title" placeholder="请输入标题(必填)">
+            </td>
+        </tr>
+        <tr>
+            <th>作者</th>
+            <td>
+                <input class="form-control modal-sm" type="text" name="author"  value="{$Think.config.AUTHOR}">
+            </td>
+        </tr>
+        <tr>
+            <th>描述</th>
+            <td>
+                <textarea class="form-control modal-sm" name="summary" rows="4" placeholder="可以不填"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <div class="alert alert-block alert-new">
+                    <a href="javascript:;" class="btn btn-success" onclick="addItem();">
+                    <i class="fa fa-plus" title="添加自定义字段"></i> 添加自定义字段</a>
+            </div> 
+        </tr>
+        <tr>
+            <div class="tab-content">
+
+                <div class="alert-new">
+                    <tr>
+                        <th style="width:10%;">字段标题</th>
+                        <th style="width:7%;text-align:center;">排序</th>
+                        <!-- <th style="width:8%;text-align:center;">是否必填</th> -->
+                        <th style="width:12%;">类型</th>
+                        <!-- <th style="width:10%;">关联默认值</th> -->
+                        <th style="width:10%;">操作</th>
+                    </tr>
+                    <tbody id="re-items">
+                    <!-- 字段详情 -->
+                    <tr>
+                        <!-- 字段标题 -->
+                        <td><input name="ftitle[]" type="text" class="form-control" value="{$r['title']}"/></td>
+                        <!-- 字段序号 -->
+                        <td><input type="text" name="num[]" class="form-control" value="{$r['num']}" /></td>
+                        <!-- 是否必填 
+                        <td style="text-align:center;"><input name="essential[]" type="checkbox" title="必填项" {if $r['essential']} checked="checked"{/if}/></td>
+                        -->
+                        <!-- 字段类型 -->
+                        <td>
+                            <select name="type[]" class="form-control">
+                                    <option value="number">数字(number)</option>
+                                    <option value="text">字符串(text)</option>
+                                    <option value="textarea">文本(textarea)</option>
+                                    <option value="radio">单选(radio)</option>
+                                    <option value="checkbox">多选(checkbox)</option>
+                                    <option value="select">下拉框(select)</option>
+                                    <option value="calendar">日历(calendar)</option>
+                                    <option value="email">电子邮件(email)</option>
+                                    <option value="image">上传图片(image)</option>
+                                    <option value="range">日期时间(range)</option>
+                                    <option value="reside">省市区(reside)</option>
+                                <!-- 数据库拉取 <option value="{$k}"{if $k == $r['type']} selected="selected"{/if}>{$v}</option> -->
+                            </select>
+                        </td>
+                        <!-- 隐藏字段
+                        <td>
+                            <select name="bind[]" class="form-control">
+                                <option value="">不关联粉丝数据</option>
+                                <option value="{$k}"{if $k == $r['bind']} selected="selected"{/if}>{$v}</option>
+                            </select>
+                            <input type="hidden" name="value[]" value="{$r['value']}"/>
+                            <input type="hidden" name="desc[]" value="{$r['description']}"/>
+                            <input type="hidden" name="image[]" value="{$r['image']}"/>
+                            <input type="hidden" name="essentialvalue[]" value="{if $r['essential']}true{else}false{/if}"/>
+                        </td>
+                         -->
+                         <!-- 字段操作 -->
+                        <td>
+                            <a href="javascript:;" data-toggle="tooltip" data-placement="bottom" title="设置详细信息" onclick="setValues(this);" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a> &nbsp;
+                            <a href="javascript:;" onclick="deleteItem(this)" data-toggle="tooltip" data-placement="bottom" title="删除此项目" class="btn btn-default btn-sm"><i class="fa fa-times"></i></a>
+                        </td>
+                    </tr>
+                    </tbody>
+                    <tr>
+                        <th>多图上传状态</th>
+                        <td class="btn-group" data-toggle="buttons">
+                            <label class="btn btn-default">
+                                <input type="radio" name="plural" value="1" >启用
+                            </label>
+                            <label class="btn btn-default">
+                                <input type="radio" name="plural" value="0" checked="checked">关闭
+                            </label>
+                        </td>
+                    </tr>
+                </div>
+                    
+                
+
+            </div>
+        </tr>
+
+
+        <tr>
+            <th>处理程序</th>
+            <td>
+                <input class="form-control modal-sm" name="process" placeholder="处理程序" type="text" >
+            </td>
+        </tr>
+        <tr>
+            <th>是否显示</th>
+            <td>
+                <span class="inputword">是</span>
+                <input class="icheck" type="radio" name="status" value="1" checked="checked">
+                &emsp;
+                <span class="inputword">否</span>
+                <input class="icheck" type="radio" name="status" value="0">
+            </td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>
+                <input class="btn btn-success" type="submit" value="提交">
+            </td>
+        </tr>
+<!-- 略去 内容,是否原创,置顶 标签 关键词 
+
+        <tr>
+            <th>内容</th>
+            <td>
+                <ueditor name="content" />
+            </td>
+        </tr>
+
+
+        <tr>
+            <th>是否原创</th>
+            <td>
+                <span class="inputword">是</span>
+                <input class="icheck" type="radio" name="is_original" value="1" checked="checked">
+                &emsp;
+                <span class="inputword">否</span>
+                <input class="icheck" type="radio" name="is_original" value="0">
+            </td>
+        </tr>
+        <tr>
+            <th>是否置顶</th>
+            <td>
+                <span class="inputword">是</span>
+                <input class="icheck" type="radio" name="is_top" value="1">
+                &emsp;
+                <span class="inputword">否</span>
+                <input class="icheck" type="radio" name="is_top" value="0" checked="checked">
+            </td>
+        </tr>
+
+        <tr>
+            <th>标签</th>
+            <td>
+                <foreach name="allTag" item="v">
+                    <span class="inputword">{$v['tname']}</span>
+                    <input class="icheck" type="checkbox" name="tids[]" value="{$v['tid']}">
+                    &emsp;
+                </foreach>
+            </td>
+        </tr>
+
+        <tr>
+            <th>关键词</th>
+            <td>
+                <input class="form-control modal-sm" placeholder="多个关键词用顿号分隔" type="text" name="keywords">
+            </td>
+        </tr>
+  --> 
+    </table>
+</form>
+<bootstrapjs />
+<icheckjs color="blue" />
+<script type="text/javascript">
+    function addItem() {
+        var html = '' + 
+                '<tr>' +
+                    '<td><input name="title[]" type="text" class="form-control" /></td>' +
+                    '<td><input type="text" name="num[]" class="form-control" /></td>' +
+                    '<td>' +
+                        '<select name="type[]" class="form-control">' +
+                                    '<option value="number">数字(number)</option>'+
+                                    '<option value="text">字符串(text)</option>'+
+                                    '<option value="textarea">文本(textarea)</option>'+
+                                    '<option value="radio">单选(radio)</option>'+
+                                    '<option value="checkbox">多选(checkbox)</option>'+
+                                    '<option value="select">下拉框(select)</option>'+
+                                    '<option value="calendar">日历(calendar)</option>'+
+                                    '<option value="email">电子邮件(email)</option>'+
+                                    '<option value="image">上传图片(image)</option>'+
+                                    '<option value="range">日期时间(range)</option>'+
+                                    '<option value="reside">省市区(reside)</option>'+
+                        // {loop $types $k $v}'<option value="{$k}">{$v}</option>' + {/loop}
+                        '</select>' +
+                    '</td>' +
+                    '<td>' +
+                        '<a href="javascript:;" data-toggle="tooltip" data-placement="bottom" class="btn btn-warning btn-sm" title="设置详细信息" onclick="setValues(this);"><i class="fa fa-edit"></i></a> &nbsp;' +
+                        '<a href="javascript:;" data-toggle="tooltip" data-placement="bottom" class="btn btn-default btn-sm" onclick="deleteItem(this)"  title="删除此项目"><i class="fa fa-times"></i></a>' +
+                    '</td>' + 
+                '</tr>';
+        $('#re-items').append(html);
+    }
+    function setValues(o) {
+        var v = $(o).parent().prev().find(':hidden[name="value[]"]').val();
+        v = decodeURIComponent(v);
+        $('#dialog #re-value').val(v.replace(/,/g, '\n'));
+        
+        var v = $(o).parent().prev().find(':hidden[name="image[]"]').val();
+        //  v = decodeURIComponent(v);
+        $('#dialog #re-image').val(v);
+        
+        var v = $(o).parent().prev().find(':hidden[name="desc[]"]').val();
+        v = decodeURIComponent(v);
+        $('#dialog #re-desc').val(v);
+        var v = $(o).parent().prev().prev().find('select[name="type[]"]').val();
+        
+             
+        if(v == 'radio' || v == 'checkbox' || v == 'select') {
+            $('.well.re-value').removeClass('hide');
+        } else {
+            $('.well.re-value').addClass('hide');
+        }
+        if(v == 'image') {
+            $('.well.re-image').removeClass('hide');
+        } else {
+            $('.well.re-image').addClass('hide');
+        }
+        $('#dialog').modal({keyboard: false});
+        currentItem = o;
+    }
+    function deleteItem(o) {
+        $(o).parent().parent().remove();
+    }
+</script>
+</body>
+</html>

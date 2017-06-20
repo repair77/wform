@@ -8,7 +8,7 @@ class UserController extends AdminBaseController{
 
     // 全部用户
     public function index(){
-        $assign=D('OauthUser')->getPageData();
+        // $assign=D('OauthUser')->getPageData();
         $this->assign($assign);
         $this->display();
     }

@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
 	<meta charset="UTF-8">
-	<title>网站信息</title>
+	<title>系统信息</title>
 	<bootstrapcss />
 	<icheckcss />
 </head>
@@ -10,32 +10,38 @@
 <form action="{:U('Admin/Config/index')}" method="post">
 	<ul class="nav nav-tabs">
 		<li class="active">
-			<a href="#basic" data-toggle="tab">网站设置</a>
+			<a href="#basic" data-toggle="tab">系统设置</a>
 		</li>
+		
 		<li>
 			<a href="#seo" data-toggle="tab">优化推广</a>
 		</li>
+<!--
 		<li>
-			<a href="#water" data-toggle="tab">文章水印</a>
+			<a href="#water" data-toggle="tab">表单水印</a>
 		</li>
+ 
 		<li>
 			<a href="#oauth" data-toggle="tab">第三方登录</a>
 		</li>
 		<li>
 			<a href="#other" data-toggle="tab">其他第三方接口</a>
 		</li>
+-->
 		<li>
 			<a href="#email" data-toggle="tab">邮箱设置</a>
 		</li>
+<!-- 
 		<li>
 			<a href="#comment" data-toggle="tab">评论设置</a>
 		</li>
+-->
 	</ul>
 	<div class="tab-content">
 		<div class="tab-pane fade in active" id="basic">
 			<table class="table table-bordered table-hover">
 				<tr>
-					<th>网站状态：</th>
+					<th>系统状态：</th>
 					<td>
 						<span class="inputword">开启</span>
 						<input class="icheck" type="radio" name="WEB_STATUS" value="1" <eq name="data['WEB_STATUS']" value="1">checked="checked"</eq> >
@@ -44,7 +50,7 @@
 					</td>
 				</tr>
 				<tr>
-					<th>网站关闭时提示文字：</th>
+					<th>系统关闭时提示文字：</th>
 					<td>
 						<textarea class="form-control modal-sm" name="WEB_CLOSE_WORD" rows="5" placeholder="">{$data['WEB_CLOSE_WORD']}</textarea>
 					</td>
@@ -66,19 +72,19 @@
 		<div class="tab-pane fade" id="seo">
 			<table class="table table-bordered table-hover">
 				<tr>
-					<th>网站名：</th>
+					<th>系统名：</th>
 					<td>
 						<input class="form-control modal-sm" type="text" name="WEB_NAME" value="{$data['WEB_NAME']}" >
 					</td>
 				</tr>
 				<tr>
-					<th>网站关键字：</th>
+					<th>系统关键字：</th>
 					<td>
 						<textarea class="form-control modal-sm" name="WEB_KEYWORDS" rows="5" placeholder="">{$data['WEB_KEYWORDS']}</textarea>
 					</td>
 				</tr>
 				<tr>
-					<th>网站描述：</th>
+					<th>系统描述：</th>
 					<td>
 						<textarea class="form-control modal-sm" name="WEB_DESCRIPTION" rows="5" placeholder="">{$data['WEB_DESCRIPTION']}</textarea>
 					</td>
@@ -90,19 +96,20 @@
 					</td>
 				</tr>
 				<tr>
-					<th>文章保留版权提示：</th>
+					<th>表单保留版权提示：</th>
 					<td>
 						<textarea class="form-control modal-sm" name="COPYRIGHT_WORD" rows="5" placeholder="">{$data['COPYRIGHT_WORD']}</textarea>
 					</td>
 				</tr>
 				<tr>
-					<th>文章图片title和alt内容：</th>
+					<th>表单图片title和alt内容：</th>
 					<td>
 						<input class="form-control modal-sm" type="text" name="IMAGE_TITLE_ALT_WORD" value="{$data['IMAGE_TITLE_ALT_WORD']}" >
 					</td>
 				</tr>
 			</table>
 		</div>
+		<!-- 
 		<div class="tab-pane fade" id="water">
 			<table class="table table-bordered table-hover">
 				<tr>
@@ -314,6 +321,7 @@
 				</tr>
 			</table>
 		</div>
+		 -->
 		<div class="tab-pane fade" id="email">
 			<table class="table table-bordered table-hover">
 				<tr>
@@ -342,6 +350,7 @@
 				</tr>
 			</table>
 		</div>
+		<!-- 
 		<div class="tab-pane fade" id="comment">
 			<table class="table table-bordered table-hover">
 				<tr>
@@ -370,6 +379,7 @@
 				</tr>
 			</table>
 		</div>
+		 -->
 	</div>
 	<div>
 		<input class="btn btn-success" type="submit" value="提交">

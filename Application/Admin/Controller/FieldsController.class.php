@@ -4,14 +4,14 @@ use Common\Controller\AdminBaseController;
 /**
  * 字段管理
  */
-class TagController extends AdminBaseController{
+class FieldsController extends AdminBaseController{
     // 定义数据表
     private $db;
     
-    // 构造函数 实例化TagModel
+    // 构造函数 实例化FieldsModel
     public function __construct(){
         parent::__construct();
-        $this->db=D('Tag');
+        $this->db=D('Fields');
     }
 
     // 字段首页

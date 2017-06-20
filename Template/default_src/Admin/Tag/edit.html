@@ -2,18 +2,31 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>添加标签</title>
+    <title>修改字段</title>
     <bootstrapcss />
 </head>
 <body>
 <form action="{:U('Admin/Tag/edit')}" method="post">
     <table class="table table-bordered table-striped table-hover table-condensed">
         <input type="hidden" name="tid" value="{$data['tid']}">
+                <tr>
+            <th>字段类型</th>
+            <td><input class="form-control modal-sm" type="text" name="cname" value="{$onedata['cname']}"></td>
+        </tr>
         <tr>
-            <th>标签名</th>
+            <th>所属表单</th>
             <td>
-                <input class="form-control modal-sm" type="text" name="tname" value="{$data['tname']}">
+                <select class="form-control modal-sm" name="pid">
+                    <option value="0">所属表单</option>
+                    <foreach name="data" key="k" item="v">
+                        <option value="{$v['cid']}" <if condition="$onedata['pid'] eq $v['cid']">selected="selected"</if> {$v['_html']}>{$v['_name']}</option>
+                    </foreach>
+                </select>
             </td>
+        </tr>
+        <tr>
+            <th>排序</th>
+            <td><input class="form-control modal-sm" type="text" name="sort" value="{$onedata['sort']}"></td>
         </tr>
         <tr>
             <th></th>

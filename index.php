@@ -26,6 +26,8 @@ define("DEFAULT_THEME","default_src");
 // 定义模板文件默认目录
 define("TMPL_PATH","./Template/".DEFAULT_THEME."/");
 
+define('BIND_MODULE', 'Admin');
+
 // 引入ThinkPHP入口文件
 require './ThinkPHP/ThinkPHP.php';
 

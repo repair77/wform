@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>bjyblog后台管理</title>
+    <title>表单系统后台管理</title>
     <bootstrapcss/>
     <css file="__ADMIN_CSS__/index.css" />
 </head>
@@ -18,9 +18,15 @@
             <span class="fa fa-list-ul nt-ico"></span>
             内容管理
         </li>
+        <!-- 
         <li class="ntn-li">
             <span class="fa fa-comments nt-ico"></span>
             碎言评论
+        </li>
+         -->
+        <li class="ntn-li">
+            <span class="fa fa-trash nt-ico"></span>
+            回收管理
         </li>
         <li class="ntn-li">
             <span class="fa fa-users nt-ico"></span>
@@ -28,12 +34,9 @@
         </li>
         <li class="ntn-li">
             <span class="fa fa-cogs nt-ico"></span>
-            网站设置
+            系统设置
         </li>
-        <li class="ntn-li">
-            <span class="fa fa-trash nt-ico"></span>
-            回收管理
-        </li>
+
     </ul>
     <ul class="nt-msg list-unstyled">
         <li class="nt-go-index">
@@ -52,36 +55,57 @@
     <div class="nl-con nl-show">
         <dl>
             <dt>
-                <span class="fa fa-th"></span>文章管理
+                <span class="fa fa-th"></span>表单管理
             </dt>
             <dd>
-                <a href="{:U('Admin/Article/add')}" target="right_content"></a>
-                <span class="fa fa-caret-right"></span>添加文章
+                <a href="{:U('Admin/Content/add')}" target="right_content"></a>
+                <span class="fa fa-caret-right"></span>添加表单
                 <div class="nl-checked">
                     <div class="nl-arrows"></div>
                 </div>
             </dd>
             <dd>
-                <a href="{:U('Admin/Article/index')}" target="right_content"></a>
-                <span class="fa fa-caret-right"></span>文章列表
+                <a href="{:U('Admin/Content/index')}" target="right_content"></a>
+                <span class="fa fa-caret-right"></span>表单列表
                 <div class="nl-checked">
                     <div class="nl-arrows"></div>
                 </div>
             </dd>
         </dl>
+        
         <dl>
             <dt>
-                <span class="fa fa-tags"></span>标签管理
+                <span class="fa fa-tags"></span>字段管理
             </dt>
             <dd>
-                <a href="{:U('Admin/Tag/add')}" target="right_content"></a>
-                <span class="fa fa-caret-right"></span>添加标签
+                <a href="{:U('Admin/Fields/add')}" target="right_content"></a>
+                <span class="fa fa-caret-right"></span>添加字段
                 <div class="nl-checked">
                     <div class="nl-arrows"></div>
                 </div>
             </dd>
             <dd>
-                <a href="{:U('Admin/Tag/index')}" target="right_content"></a>
+                <a href="{:U('Admin/Fields/index')}" target="right_content"></a>
+                <span class="fa fa-caret-right"></span>字段列表
+                <div class="nl-checked">
+                    <div class="nl-arrows"></div>
+                </div>
+            </dd>
+        </dl>
+        
+        <dl>
+            <dt>
+                <span class="fa fa-tags"></span>标签管理
+            </dt>
+            <dd>
+                <a href="{:U('Admin/Fields/add')}" target="right_content"></a>
+                <span class="fa fa-caret-right"></span>标签字段
+                <div class="nl-checked">
+                    <div class="nl-arrows"></div>
+                </div>
+            </dd>
+            <dd>
+                <a href="{:U('Admin/Fields/index')}" target="right_content"></a>
                 <span class="fa fa-caret-right"></span>标签列表
                 <div class="nl-checked">
                     <div class="nl-arrows"></div>
@@ -110,7 +134,7 @@
     </div>
     <!-- 内容管理结束 -->
 
-    <!-- 留言评论开始 -->
+    <!-- 留言评论开始 
     <div class="nl-con">
         <dl>
             <dt>
@@ -144,6 +168,7 @@
             </dd>
         </dl>
     </div>
+     -->
     <!-- 留言评论结束 -->
 
     <!-- 回收管理开始 -->
@@ -153,19 +178,20 @@
                 <span class="fa fa-trash-o"></span>回收管理
             </dt>
             <dd>
-                <a href="{:U('Admin/Recycle/article')}" target="right_content"></a>
-                <span class="fa fa-caret-right"></span>已删文章
+                <a href="{:U('Admin/Recycle/content')}" target="right_content"></a>
+                <span class="fa fa-caret-right"></span>已删表单
                 <div class="nl-checked">
                     <div class="nl-arrows"></div>
                 </div>
             </dd>
             <dd>
-                <a href="{:U('Admin/Recycle/comment')}" target="right_content"></a>
-                <span class="fa fa-caret-right"></span>已删评论
+                <a href="{:U('Admin/Recycle/fields')}" target="right_content"></a>
+                <span class="fa fa-caret-right"></span>已删字段
                 <div class="nl-checked">
                     <div class="nl-arrows"></div>
                 </div>
             </dd>
+            <!-- 
             <dd>
                 <a href="{:U('Admin/Recycle/chat')}" target="right_content"></a>
                 <span class="fa fa-caret-right"></span>已删随言
@@ -173,13 +199,7 @@
                     <div class="nl-arrows"></div>
                 </div>
             </dd>
-            <dd>
-                <a href="{:U('Admin/Recycle/link')}" target="right_content"></a>
-                <span class="fa fa-caret-right"></span>已删友链
-                <div class="nl-checked">
-                    <div class="nl-arrows"></div>
-                </div>
-            </dd>
+             -->
         </dl>
     </div>
     <!-- 回收管理结束 -->
@@ -201,7 +221,7 @@
     </div>
     <!-- 用户管理结束 -->
 
-    <!-- 网站设置开始 -->
+    <!-- 系统设置开始 -->
     <div class="nl-con">
         <dl>
             <dt>
@@ -209,7 +229,7 @@
             </dt>
             <dd>
                 <a href="{:U('Admin/Config/index')}" target="right_content"></a>
-                <span class="fa fa-caret-right"></span>网站信息
+                <span class="fa fa-caret-right"></span>系统信息
                 <div class="nl-checked">
                     <div class="nl-arrows"></div>
                 </div>
@@ -222,27 +242,8 @@
                 </div>
             </dd>
         </dl>
-        <dl>
-            <dt>
-                <span class="fa fa-heart"></span>友情链接
-            </dt>
-            <dd>
-                <a href="{:U('Admin/Link/add')}" target="right_content"></a>
-                <span class="fa fa-caret-right"></span>添加友链
-                <div class="nl-checked">
-                    <div class="nl-arrows"></div>
-                </div>
-            </dd>
-            <dd>
-                <a href="{:U('Admin/Link/index')}" target="right_content"></a>
-                <span class="fa fa-caret-right"></span>友链列表
-                <div class="nl-checked">
-                    <div class="nl-arrows"></div>
-                </div>
-            </dd>
-        </dl>
     </div>
-    <!-- 网站设置结束 -->
+    <!-- 系统设置结束 -->
 </div>
 <!-- 左侧导航菜单结束 -->
 

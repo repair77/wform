@@ -58,26 +58,6 @@ php;
 <![endif]-->
 <script src="__PUBLIC__/static/pace/pace.min.js"></script>
 <script src="__HOME_JS__/index.js"></script>
-<!-- 百度页面自动提交开始 -->
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-<!-- 百度页面自动提交结束 -->
-
-<!-- 百度统计开始 -->
-$web_statistics
-<!-- 百度统计结束 -->
 php;
         return $link;
     }

@@ -13,8 +13,7 @@ class PublicBaseController extends BaseController{
         // 分配常用数据
         $assign=array(
             'categorys'=>D('Category')->getAllData(),
-            'tags'=>D('Tag')->getAllData(),
-            'links'=>D('Link')->getDataByState(0,1),
+            // 'tags'=>D('Tag')->getAllData(),
             );
         $this->assign($assign);
 

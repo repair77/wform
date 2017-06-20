@@ -14,8 +14,8 @@ class CommentModel extends BaseModel{
     public function addData($type){
         $data=I('post.');
         $ouid=$_SESSION['user']['id'];
-        $nickname=$_SESSION['user']['nickname'];
-        $is_admin=M('Oauth_user')->getFieldById($ouid,'is_admin');
+        // $nickname=$_SESSION['user']['nickname'];
+        // $is_admin=M('Oauth_user')->getFieldById($ouid,'is_admin');
         $data['content']=htmlspecialchars_decode($data['content']);
         $data['content']=preg_replace('/on.+\".+\"/i', '', $data['content']);
         // 删除除img外的其他标签
@@ -36,7 +36,7 @@ class CommentModel extends BaseModel{
         $pattern = "/^([0-9A-Za-z\\-_\\.]+)@([0-9a-z]+\\.[a-z]{2,3}(\\.[a-z]{2})?)$/i";
         // 如果用户输入邮箱；则将邮箱记录入oauth_user表中
         if (preg_match($pattern, $data['email'])) {
-            D('Oauth_user')->where(array('id'=>$_SESSION['user']['id']))->setField('email',$data['email']);
+            // D('Oauth_user')->where(array('id'=>$_SESSION['user']['id']))->setField('email',$data['email']);
         }
         // 添加数据
         $cmtid=$this->add($comment);
@@ -60,10 +60,10 @@ html;
         // 给用户发送邮件通知
         if (C('COMMENT_SEND_EMAIL') && $data['pid']!=0) {
             $parent_uid=$this->getFieldByCmtid($data['pid'],'ouid');
-            $parent_data=M('Oauth_user')->field('nickname,email')->find($parent_uid);
+            // $parent_data=M('Oauth_user')->field('nickname,email')->find($parent_uid);
             $parent_address=$parent_data['email'];
             if (!empty($parent_address)) {
-                $parent_name=$parent_data['nickname'];
+                // $parent_name=$parent_data['nickname'];
                 $title=M('Article')->getFieldByAid($data['aid'],'title');
                 $url=U('Home/Index/article',array('aid'=>$data['aid']),'',true);
                 $date=date('Y-m-d H:i:s');
@@ -89,15 +89,15 @@ html;
         $count=$this
             ->alias('c')
             ->join('__ARTICLE__ a ON a.aid=c.aid')
-            ->join('__OAUTH_USER__ ou ON ou.id=c.ouid')
+            // ->join('__OAUTH_USER__ ou ON ou.id=c.ouid')
             ->where(array('c.is_delete'=>$is_delete))
             ->count();
         $page=new \Org\Bjy\Page($count,15);
         $list=$this
-            ->field('c.*,a.title,ou.nickname')
+            ->field('c.*,a.title')
             ->alias('c')
             ->join('__ARTICLE__ a ON a.aid=c.aid')
-            ->join('__OAUTH_USER__ ou ON ou.id=c.ouid')
+            // ->join('__OAUTH_USER__ ou ON ou.id=c.ouid')
             ->where(array('c.is_delete'=>$is_delete))
             ->limit($page->firstRow.','.$page->listRows)
             ->order('date desc')
@@ -127,8 +127,8 @@ html;
         // 关联第三方用户表获取一级评论
         $data=$this
             ->alias('c')
-            ->field('c.*,ou.nickname,ou.head_img')
-            ->join('__OAUTH_USER__ ou ON c.ouid=ou.id')
+            ->field('c.*')
+            // ->join('__OAUTH_USER__ ou ON c.ouid=ou.id')
             ->where($where)
             ->order('date desc')
             ->select();
@@ -155,9 +155,9 @@ html;
     // 递归获取树状结构
     public function getTree($data){
         $child=$this
-            ->field('c.*,ou.nickname,ou.head_img')
+            ->field('c.*')
             ->alias('c')
-            ->join('__OAUTH_USER__ ou ON c.ouid=ou.id')
+            // ->join('__OAUTH_USER__ ou ON c.ouid=ou.id')
             ->where(array('pid'=>$data['cmtid']))
             ->select();
         if(!empty($child)){
@@ -175,9 +175,9 @@ html;
      */
     public function getNewComment(){
         // 获取后台管理员
-        $uids=M('Oauth_user')
-            ->where(array('is_admin'))
-            ->getField('id',true);
+        // $uids=M('Oauth_user')
+        //     ->where(array('is_admin'))
+        //     ->getField('id',true);
         // 如果没有设置管理员；显示全部评论
         if (empty($uids)) {
             $map=array(
@@ -191,10 +191,10 @@ html;
                 );
         }
         $data=$this
-            ->field('c.content,c.date,a.title,a.aid,ou.nickname,ou.head_img')
+            ->field('c.content,c.date,a.title,a.aid')
             ->alias('c')
             ->join('__ARTICLE__ a ON c.aid=a.aid')
-            ->join('__OAUTH_USER__ ou ON c.ouid=ou.id')
+            // ->join('__OAUTH_USER__ ou ON c.ouid=ou.id')
             ->where($map)
             ->order('c.date desc')
             ->limit(20)

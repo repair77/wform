@@ -15,10 +15,13 @@ class IndexController extends AdminBaseController{
             'all_article'=>D('Article')->getCountData(),
             'delete_article'=>D('Article')->getCountData(array('is_delete'=>1)),
             'hide_article'=>D('Article')->getCountData(array('is_show'=>0)),
-            'all_chat'=>D('Chat')->getCountData(),
-            'delete_chat'=>D('Chat')->getCountData(array('is_delete'=>1)),
-            'hide_chat'=>D('Chat')->getCountData(array('is_show'=>0)),
-            'all_comment'=>M('Comment')->count(),
+            'all_category'=>D('Category')->getCountData(),
+            'delete_category'=>D('Category')->getCountData(array('is_delete'=>1)),
+            'hide_category'=>D('Category')->getCountData(array('status'=>0)),
+            // 'all_chat'=>D('Chat')->getCountData(),
+            // 'delete_chat'=>D('Chat')->getCountData(array('is_delete'=>1)),
+            // 'hide_chat'=>D('Chat')->getCountData(array('is_show'=>0)),
+            // 'all_comment'=>M('Comment')->count(),
             );
         $this->assign($assign);
         $this->display();

@@ -4,19 +4,20 @@
     <meta charset="UTF-8">
     <title>添加分类</title>
     <bootstrapcss />
+    <icheckcss />
 </head>
 <body>
 <form action="{:U('Admin/Category/add')}" method="post">
     <table class="table table-bordered table-hover">
         <tr>
-            <th>分类名</th>
+            <th>分类名称</th>
             <td><input class="form-control modal-sm" type="text" name="cname" ></td>
         </tr>
         <tr>
-            <th>所属栏目</th>
+            <th>所属分类</th>
             <td>
                 <select class="form-control modal-sm" name="pid">
-                    <option value="0">顶级栏目</option>
+                    <option value="0">顶级分类</option>
                     <foreach name="data" key="k" item="v">
                         <option value="{$v['cid']}" <if condition="$cid eq $v['cid']">selected="selected"</if> >{$v['_name']}</option>
                     </foreach>
@@ -24,17 +25,29 @@
             </td>
         </tr>
         <tr>
-            <th>排序</th>
+            <th>排序号</th>
             <td><input class="form-control modal-sm" type="text" name="sort" ></td>
         </tr>
+        <!-- 
         <tr>
             <th>关键词</th>
             <td><input class="form-control modal-sm" type="text" name="keywords" ></td>
         </tr>
+         -->   
         <tr>
             <th>描述</th>
             <td>
-                <textarea class="form-control modal-sm" name="description"></textarea>
+                <textarea class="form-control modal-sm" rows="7" name="description"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <th>是否显示</th>
+            <td>
+                <span class="inputword">是</span>
+                <input class="icheck" type="radio" name="status" value="1" checked="checked">
+                &emsp;
+                <span class="inputword">否</span>
+                <input class="icheck" type="radio" name="status" value="0">
             </td>
         </tr>
         <tr>
@@ -46,5 +59,6 @@
     </table>
 </form>
 <bootstrapjs />
+<icheckjs color="blue" />
 </body>
 </html>

@@ -4,15 +4,15 @@ use Common\Controller\AdminBaseController;
 /**
  * 表单管理
  */
-class ArticleController extends AdminBaseController{
+class ContentController extends AdminBaseController{
     // 定义数据表
     private $db;
     private $viewDb;
 
-    // 构造函数 实例化ArticleModel表
+    // 构造函数 实例化ContentModel表
     public function __construct(){
         parent::__construct();
-        $this->db=D('Article');
+        $this->db=D('Content');
     }
 
     //表单列表
@@ -26,12 +26,10 @@ class ArticleController extends AdminBaseController{
     // 添加表单
     public function add(){
         if(IS_POST){
-            if($aid=$this->db->addData()){
-                $baidu_site_url=C('BAIDU_SITE_URL');
-                if(!empty($baidu_site_url)){
-                    $this->baidu_site($aid);
-                }
-                $this->success('表单添加成功',U('Admin/Article/index'));
+            var_dump($_POST);
+            exit;
+            if($id=$this->db->addData()){
+                $this->success('表单添加成功',U('Admin/Content/index'));
             }else{
                 $this->error($this->db->getError());
             }
@@ -81,12 +79,12 @@ class ArticleController extends AdminBaseController{
                 $this->error('修改失败');
             }
         }else{
-            $aid=I('aid');
-            $data=$this->db->getDataByAid($aid);
+            $id=I('id');
+            $data=$this->db->getDataByid($id);
             $allCategory=D('Category')->getAllData();
-            $allTag=D('Tag')->getAllData();
+            // $allTag=D('Tag')->getAllData();
             $this->assign('allCategory',$allCategory);
-            $this->assign('allTag',$allTag);
+            // $this->assign('allTag',$allTag);
             $this->assign('data',$data);
             $this->display();
         }

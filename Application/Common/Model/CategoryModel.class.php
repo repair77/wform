@@ -35,9 +35,9 @@ class CategoryModel extends BaseModel{
             $this->error='请先删除子分类';
             return false;
         }
-        $articleData=D('Article')->getDataByCid($cid);
-        if(!empty($articleData)){
-            $this->error='请先删除此分类下的文章';
+        $contentData=D('Content')->getDataByCid($cid);
+        if(!empty($contentData)){
+            $this->error='请先删除此分类下的表单';
             return false;
         }
         if($this->where(array('cid'=>$cid))->delete()){
@@ -50,10 +50,10 @@ class CategoryModel extends BaseModel{
     //传递数据库字段名 获取对应的数据
     //不传递获取全部数据
     public function getAllData($field='all',$tree=true){
-        if($field=='all'){
+        if($field=='all' ){
             $data=$this->order('sort')->select();
             if($tree){
-                return \Org\Bjy\Data::tree($data,'cname');
+                return \Org\Bjy\Data::tree($data,'cname'); //子孙树
             }else{
                 return $data;
             }
@@ -81,6 +81,11 @@ class CategoryModel extends BaseModel{
             $childs[]=$v['cid'];
         }
         return $childs;
+    }
+    
+    // 传递$map获取count数据
+    public function getCountData($map=array()){
+        return $this->where($map)->count();
     }
 
 }

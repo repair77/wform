@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>添加文章</title>
+    <title>添加表单</title>
     <bootstrapcss />
     <icheckcss />
 </head>
@@ -22,7 +22,7 @@
         <tr>
             <th>标题</th>
             <td>
-                <input class="form-control modal-sm" type="text" name="title">
+                <input class="form-control modal-sm" type="text" name="title" placeholder="请输入表单的标题">
             </td>
         </tr>
         <tr>
@@ -31,6 +31,7 @@
                 <input class="form-control modal-sm" type="text" name="author" value="{$Think.config.AUTHOR}">
             </td>
         </tr>
+<!-- 略去 标签 关键词 
         <tr>
             <th>标签</th>
             <td>
@@ -41,24 +42,35 @@
                 </foreach>
             </td>
         </tr>
+
         <tr>
             <th>关键词</th>
             <td>
                 <input class="form-control modal-sm" placeholder="多个关键词用顿号分隔" type="text" name="keywords">
             </td>
         </tr>
+  -->       
         <tr>
             <th>描述</th>
             <td>
-                <textarea class="form-control modal-sm" name="description" rows="7" placeholder="可以不填，如不填；则截取文章内容前300字为描述"></textarea>
+                <textarea class="form-control modal-sm" name="description" rows="7" placeholder="可以不填，如不填；则截取表单内容前300字为描述"></textarea>
+            </td>
+        </tr>    
+        <tr>
+            <th>处理程序</th>
+            <td>
+                <input class="form-control modal-sm" placeholder="处理程序的路径" type="text" name="process">
             </td>
         </tr>
+<!-- 略去内容,是否原创,置顶
         <tr>
             <th>内容</th>
             <td>
                 <ueditor name="content" />
             </td>
         </tr>
+        
+
         <tr>
             <th>是否原创</th>
             <td>
@@ -79,6 +91,7 @@
                 <input class="icheck" type="radio" name="is_top" value="0" checked="checked">
             </td>
         </tr>
+ -->
         <tr>
             <th>是否显示</th>
             <td>
@@ -92,7 +105,7 @@
         <tr>
             <th></th>
             <td>
-                <input class="btn btn-success" type="submit" value="发表">
+                <input class="btn btn-success" type="submit" value="提交">
             </td>
         </tr>
     </table>

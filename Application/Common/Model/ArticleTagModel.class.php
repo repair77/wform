@@ -2,13 +2,13 @@
 namespace Common\Model;
 use Common\Model\BaseModel;
 /**
-* 文章标签关联表model
+* 表单标签关联表model
 */
 class ArticleTagModel extends BaseModel{
 
     /**
      * 添加数据
-     * @param string $aid 文章id
+     * @param string $aid 表单id
      * @param array $tids 标签id
      */
     public function addData($aid,$tids){
